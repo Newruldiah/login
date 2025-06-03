@@ -1,0 +1,119 @@
+/* Import Poppins font dari Google Fonts */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Latar belakang gambar laut */
+    background-image: url('Ubur-ubur.jpg');
+    background-size: cover; /* Pastikan gambar menutupi seluruh area */
+    background-position: center; /* Posisikan gambar di tengah */
+    background-attachment: fixed; /* Gambar tetap saat discroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative; /* Diperlukan untuk overlay */
+}
+
+/* Overlay gelap untuk membuat teks lebih mudah dibaca dan gambar lebih tenang */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Gelapkan gambar sedikit */
+    z-index: -1; /* Pastikan overlay di belakang konten */
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Sedikit transparan putih */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Bayangan sedikit lebih kuat */
+    width: 380px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    backdrop-filter: blur(5px); /* Efek blur pada latar belakang konten */
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #cce; /* Border lebih soft */
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f8f8f8; /* Latar belakang input sedikit abu-abu */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    border-color: #5b79e1; /* Biru yang lebih dalam saat fokus */
+    box-shadow: 0 0 0 3px rgba(91, 121, 225, 0.3);
+    outline: none;
+}
+
+button {
+    background: linear-gradient(45deg, #5b79e1 0%, #87CEEB 100%); /* Gradien biru yang tenang */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih gelap */
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+}
+
+.message {
+    margin-top: 25px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.message.success {
+    color: #28a745; /* Tetap hijau untuk sukses */
+}
+
+.message.error {
+    color: #dc3545; /* Tetap merah untuk error */
+}
